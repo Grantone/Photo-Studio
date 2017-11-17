@@ -7,9 +7,9 @@
 </head>
 
 <body>
-  {%extends 'all-images/base.html'%} {% block content %} {{block.super}} {% for image in images %} {{image.name}} {% endfor %}
+  {%extends 'all-posts/base.html'%} {% block content %} {{block.super}} {% for post in posts %} {{post.name}} {% endfor %}
 
-  <a href="{url 'image' image.id}">{{image.name}}</a> {% for image in images %} {{image.name}} {% endfor %} {% endblock %}
+  <a href="{url 'post' post.id}">{{post.name}}</a> {% for post in posts %} {{post.name}} {% endfor %} {% endblock %}
 
 </body>
 
