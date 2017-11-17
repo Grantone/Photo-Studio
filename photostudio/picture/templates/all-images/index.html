@@ -1,0 +1,3 @@
+{%extends 'all-images/base.html'%} {% block content %} {{block.super}} {% for image in images %} {{image.name}} {% endfor %}
+
+<a href="{url 'image' image.id}">{{image.name}}</a> {% endblock %}
