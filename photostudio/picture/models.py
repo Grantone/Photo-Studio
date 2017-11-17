@@ -32,4 +32,4 @@ class Post(models.Model):
 
     @classmethod
     def get_posts(cls):
-        posts = Post.objects.all()
+        posts = cls.objects.all()
