@@ -1,24 +1,17 @@
-{% load bootstrap3 %} {% load staticfles %}
 <!DOCTYPE html>
 <html>
 
 <head>
-  <meta charset="utf-8"> {% if title %}
-  <title>Portfolio Website - {{title}}</title>
-  {% else %}
-  <title> Photo Studio </title>
-  {% endif %} {% block styles %} {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/base.css' %}"> {% endblock %}
-
-
+  <meta charset="utf-8">
+  <title></title>
 </head>
 
 <body>
-  {% include "navbar.html" %} {% block content %}
-  <h1 class='text-center'>Welcome to Photo Studio </h1> {% endblock %} {% block scripts %}
+  <ul>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  {% bootstrap_javascript %} {% endblock %}
+    {% block cotent %} {{image.name}} {{image.description}} {{image.image_link}} {% endblock%}
+  </ul>
+
 </body>
 
 </html>
