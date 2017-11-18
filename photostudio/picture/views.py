@@ -30,3 +30,7 @@ def search_results(request):
         message = f"{search_term}"
 
         return render(request, 'all-posts/search.html', {"message": message, "posts": searched_posts})
+
+    else:
+        message = "You haven't searched for any post"
+        return render(request, 'all-news/search.html', {"message": message})

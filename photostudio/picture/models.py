@@ -33,3 +33,9 @@ class Post(models.Model):
     @classmethod
     def get_posts(cls):
         posts = cls.objects.all()
+
+
+@classmethod
+def search_by_title(cls, search_term):
+    picture = cls.objects.filter(title__icontains=searc_term)
+    return picture
