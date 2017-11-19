@@ -9,7 +9,7 @@
 <body>
   <ul>
 
-    {% block cotent %} {{post.name}} {{post.description}} {{post.post_link}} {% endblock%}
+    {% block cotent %} {{block.super}} {{post.name}} {{post.description}} {{post.post_link}} {% endblock%}
   </ul>
 
 </body>
