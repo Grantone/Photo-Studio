@@ -1,3 +1,4 @@
+{%extends 'all-posts/base.html'%} {% block content %}
 <!DOCTYPE html>
 <html>
 
@@ -7,10 +8,41 @@
 </head>
 
 <body>
-  {%extends 'all-posts/base.html'%} {% block content %} {{block.super}} {% for post in posts %} {{post.name}} {% endfor %}
 
-  <a href="{url 'post' post.id}">{{post.name}}</a> {% for post in posts %} {{post.name}} {% endfor %} {% endblock %}
+  {% include 'navbar.html' %} {% block content %} {{ block.super }}
+  <div class="container-fluid">
 
+    {% for tag_item in tags %}
+
+    <a href="{% url 'tag' tag_item.id %}" class="btn btn-default"> {{ tag_item.name }} </a> {% endfor %}
+
+  </div>
+
+
+  <div class="container">
+
+    <div class="row">
+
+      <h2> All Photos </h2>
+
+    </div>
+
+
+    {% for posts_item in posts %}
+
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="posts" style="margin-top: 30px;">
+
+      <a href="{% url 'post' posts_item.id %}"><img src="{{ posts_item.image.url }}" class="img-responsive" alt="Image"></a>
+
+    </div>
+
+    {% empty %}
+
+    <h2 class="text-center"> There Are No Posts </h2> {% endfor %}
+
+  </div>
+
+  {% endblock %}
 </body>
 
 </html>
