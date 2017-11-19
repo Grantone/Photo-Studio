@@ -23,9 +23,9 @@ class User(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=30)
     image_link = models.CharField(max_length=60)
-    post_image = models.ImageField(upload_to='posts/', null=True)
     tags = models.ManyToManyField(tags)
     user = models.ForeignKey(User)
+    post_image = models.ImageField(upload_to='posts/', null=True)
 
     def __str__(self):
         return self.title
@@ -37,5 +37,6 @@ class Post(models.Model):
 
 @classmethod
 def search_by_title(cls, search_term):
-    picture = cls.objects.filter(title__icontains=searc_term)
+    picture = cls.objects.filter(title__icontains=search_term)
+
     return picture
