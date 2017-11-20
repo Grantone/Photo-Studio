@@ -9,6 +9,8 @@ urlpatterns = [
     # url(r'^picture/', include('picture.urls'))
     url(r'^search/', views.search_results, name='search_results'),
     url(r'^post/(\d+)', views.post, name='post'),
+    url(r'^photos/$', views.photos, name='photos'),
+
 
 ]
 if settings.DEBUG:

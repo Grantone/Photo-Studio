@@ -5,3 +5,23 @@ h1 {
 .navbar {
    background-color: #FFEBCD !important;
 }
+
+
+body   {
+  height: 80%;
+  padding: 60px;
+  color: #e9e6d3;
+  background-color: 	#00FFFF;
+    border-right: 1px solid #E9967A;
+    border-left: 1px solid #E9967A;
+  font-family: sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: normal;
+}
+
+image {
+  height: 60%;
+  padding: 60px;
+  
+}

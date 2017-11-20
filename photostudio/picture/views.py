@@ -6,7 +6,7 @@ from .models import Post
 
 
 def index(request):
-    posts = Post.get_posts()
+    posts = Post.objects.all()
 
     return render(request, 'all-posts/index.html', {"posts": posts})
 
@@ -21,6 +21,10 @@ def post(request, post_id):
         raise Http404()
 
     return render(request, 'all-posts/post.html', {"post": post, "tags": tags})
+
+
+def photos(request):
+    return render(request, 'photos.html')
 
 
 def search_results(request):
