@@ -23,5 +23,9 @@ body   {
 image {
   height: 60%;
   padding: 60px;
-  
+
+}
+
+.container-fluid {
+  background-image: url('../media/posts/images.jpg');
 }
