@@ -3,7 +3,7 @@
 This is a web app for ading,viewing and posting images.
 #### By
 
-* Granton Mchana.
+Granton Mchana.
 
 ## Description
 This is a website that allows a user to post and add or even view posted photos on this page. A photo may be reviewed by many persons but one user is the one allocated a chance to post the images or photos.
@@ -14,8 +14,8 @@ To access the web app, navigate to
 
 ## Technologies Used
 
-Python
-Django
+* Python
+* Django
 
 ## Support and contact details
 In case of any inquiry you can reach us through my email gmchana254@gmail.com
