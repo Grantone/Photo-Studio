@@ -7,7 +7,7 @@ from .models import Post
 
 def index(request):
     posts = Post.objects.all()
-
+    print(posts)
     return render(request, 'all-posts/index.html', {"posts": posts})
 
 
