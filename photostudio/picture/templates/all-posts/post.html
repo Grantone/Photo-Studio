@@ -1,16 +1,17 @@
 {% extends 'all-posts/base.html' %} {% load bootstrap3 %} {% load static %} {% block scripts %}
-<link rel="stylesheet" href="{% static 'css/basepost.css' %}"> {% endblock %} {% block body %} {{block.super}}
-<header class="text-center text-white d-flex">
+<link rel="stylesheet" href="{% static 'css/basepost.css' %}"> {{block.super}} {%endblock%} {%block content%}
+<header class="text-center text-white d-flex" class="container">
   <div class="photo_post">
-    {% for photo in photos %}
-    <div class="post_photo post-zoom">
-      <a href="{% url 'photo' photo.id %}" data-toggle="modal" data-target="">
-            <img src="{{photo.photo_image.url}}" class="img-responsive" alt="{{photo.title}}"></a>
-      <div class="">
-        {{photo.title}}
-      </div>
+    <div class="">
+      {{post.title}}
     </div>
-    {% endfor %}
+    <div class="container">
+      <a href="#" data-toggle="modal" data-target="">
+            <img src="{{post.post_image.url}}" class="img-responsive" alt="{{post.title}}"></a>
+    </div>
+    {%for tag in post.tags.all%}
+    <p>{{tag.name}} </p>
+    {%endfor%}
   </div>
 </header>
 {% endblock %}

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Post
+from .models import Post, tags
+from django.http import Http404
 
 # Create your views here.
 
@@ -14,20 +15,19 @@ def index(request):
 def post(request, post_id):
 
     try:
-        post = Post.objects.get(id=post_id)
-        tags = post.tags.all()
+        post = Post.objects.get(pk=post_id)
 
-    except DoesNotExist:
+    except Post.DoesNotExist:
         raise Http404()
 
-    return render(request, 'all-posts/post.html', {"post": post, "tags": tags})
+    return render(request, 'all-posts/post.html', {"post": post})
 
 
 def photos(request, photo_id):
     try:
         photo = Photo.objects.get(id=photo_id)
 
-    except DoesNotExist:
+    except Post.DoesNotExist:
         raise Http404()
 
     return render(request, 'all-posts/photos.html', {"photo": photo})

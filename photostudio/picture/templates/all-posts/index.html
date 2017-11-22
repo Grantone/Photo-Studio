@@ -13,10 +13,10 @@
   </div>
   {% for posts_item in posts %}
 
-  <div class="post_section">
+  <div class="col-xs-6 col-md-4 col-lg-4">
     <img src="{{posts_item.post_image.url}}" class="img-responsive" alt="Image">
     <div class="centered">
-      <a href="{% url 'post' posts_item.id %}">{{posts_item.name}}</a>
+      <a href="{% url 'post' posts_item.id %}">{{posts_item.title}}</a>
     </div>
   </div>
   {% endfor %}
