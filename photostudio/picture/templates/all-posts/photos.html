@@ -1,33 +1,61 @@
-{% extends 'base.html' %} {% load bootstrap3 %} {% load static %}
+{% extends 'base.html' %} {% load bootstrap3 %} {% load static %} {% block scripts %}
+<link rel="stylesheet" href="{% static 'css/basepost.css' %}"> {% endblock %} {% block body %} {{block.super}} {% include 'navbar.html' %} {{ block.super }}
 
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Ma Pics</title>
-</head>
-
-<body>
-
-  {% include 'navbar.html' %} {{ block.super }}
-
-
+<header class="photo_page text-center text-white d-flex">
   <div class="container">
-
-    <h1> Photos </h1>
-
-    <p>Get all knds of photos under one umbrella </p>
-
-    <p> A super owsome idea to know which photo is posted and when was it posted</p>
-    <p style="color: tan" ;></p>
-
+    <div class="flex-container">
+      {% for tag in photo.tags.all %}
+      <div class="tag_section">
+        <img src="{{tag.tag_image.url}}" alt="">
+        <div class="centered">
+          <small>{{tag.name}}</small>
+        </div>
+      </div>
+      {% empty %} There are no available tags for this photo... {% endfor %}
+    </div>
+  </div>
+  <div class="center">
+    <h1 class="text-center">
+        <strong>{{photo.post.name}}</strong>
+      </h1>
+    <hr>
   </div>
 
+  <div class="center">
+    <div class="container hover-zoom">
+      <img src="{{photo.photo_image.url}}" class="img-responsive">
+    </div>
+    <div class="photo_title">
+      <h2 class="text-center">{{photo.title}}</h2>
+    </div>
+    <div class="photo_story">
+      <p>{{photo.link}}</p>
+    </div>
+    <div class="center photo_link">
+      <input type="text" class="form-control" name="image_link" value="{{photo.photo_image.url}}">
+    </div>
+  </div>
 
-  {% endblock %}
+</header>
+
+{% endblock %}
+
+<!-- <div class="container">
+
+  <h1> Photos </h1>
+
+  <p>Get all knds of photos under one umbrella </p>
+
+  <p> A super owsome idea to know which photo is posted and when was it posted</p>
+  <p style="color: tan" ;></p>
+
+</div>
+
+
+{% endblock %}
 
 </body>
 
-</html>
+</html> -->

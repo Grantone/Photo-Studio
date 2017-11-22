@@ -1,20 +1,16 @@
-{% extends 'all-posts/base.html' %} {% load bootstrap3 %} {% load static %}
-
-
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <title></title>
-</head>
-
-<body>
-  <ul>
-
-    {% block cotent %} {{block.super}} {{post.name}} {{post.description}} {{post.post_link}} {% endblock%}
-  </ul>
-
-</body>
-
-</html>
+{% extends 'all-posts/base.html' %} {% load bootstrap3 %} {% load static %} {% block scripts %}
+<link rel="stylesheet" href="{% static 'css/basepost.css' %}"> {% endblock %} {% block body %} {{block.super}}
+<header class="text-center text-white d-flex">
+  <div class="photo_post">
+    {% for photo in photos %}
+    <div class="post_photo post-zoom">
+      <a href="{% url 'photo' photo.id %}" data-toggle="modal" data-target="">
+            <img src="{{photo.photo_image.url}}" class="img-responsive" alt="{{photo.title}}"></a>
+      <div class="">
+        {{photo.title}}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</header>
+{% endblock %}

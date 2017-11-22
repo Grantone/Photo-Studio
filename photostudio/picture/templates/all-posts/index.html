@@ -1,46 +1,26 @@
-{%extends 'all-posts/base.html'%} {% block content %}
-<!DOCTYPE html>
-<html>
+{%extends 'all-posts/base.html'%} {% block content %} {{block.super}}
+<div class="container-fluid">
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-</head>
+  {% for tag_item in tags %}
 
-<body>
+  <a href="{% url 'tag' tag_item.id %}" class="btn btn-default"> {{ tag_item.name }} </a> {% endfor %}
+</div>
+<div class="container">
 
+  <div class="row">
 
-  {{ block.super }}
-  <div class="container-fluid">
-
-    {% for tag_item in tags %}
-
-    <a href="{% url 'tag' tag_item.id %}" class="btn btn-default"> {{ tag_item.name }} </a> {% endfor %}
+    <h2> Posted Photos </h2>
   </div>
-  <div class="container">
+  {% for posts_item in posts %}
 
-    <div class="row">
-
-      <h2> Posted Photos </h2>
+  <div class="post_section">
+    <img src="{{posts_item.post_image.url}}" class="img-responsive" alt="Image">
+    <div class="centered">
+      <a href="{% url 'post' posts_item.id %}">{{posts_item.name}}</a>
     </div>
-    {% for posts_item in posts %}
-
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="posts" style="margin-top: 30px;">
-
-      <a href="{% url 'post' posts_item.id %}"><img src="{{ posts_item.image.url }}" class="img-responsive" alt=""> </a>
-
-      <!-- <div class="row">
-        <a><img src="media/posts/images16.jpg" alt="Car Image">Car</a>
-      </div> -->
-    </div>
-
-    {% empty %}
-
-    <h2 class="text-center"> </h2> {% endfor %}
-
   </div>
+  {% endfor %}
 
-  {% endblock %}
-</body>
+</div>
 
-</html>
+{% endblock %}

@@ -1,4 +1,6 @@
-{%extends 'all-posts/base.html'%} {% block content %}
+{%extends 'all-posts/base.html'%} {% block content %} {% block scripts %}
+<link rel="stylesheet" href="{% static 'css/basepost.css' %}"> {% endblock %} {% block body %} {{block.super}}
+
 <div class="container">
 
   <div class="row">

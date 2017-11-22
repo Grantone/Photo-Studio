@@ -7,7 +7,7 @@ from .models import Post
 
 def index(request):
     posts = Post.objects.all()
-    print(posts)
+    print (posts)
     return render(request, 'all-posts/index.html', {"posts": posts})
 
 
@@ -23,8 +23,14 @@ def post(request, post_id):
     return render(request, 'all-posts/post.html', {"post": post, "tags": tags})
 
 
-def photos(request):
-    return render(request, 'photos.html')
+def photos(request, photo_id):
+    try:
+        photo = Photo.objects.get(id=photo_id)
+
+    except DoesNotExist:
+        raise Http404()
+
+    return render(request, 'all-posts/photos.html', {"photo": photo})
 
 
 def search_results(request):
