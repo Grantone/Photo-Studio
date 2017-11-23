@@ -1,9 +1,12 @@
-{%extends 'all-posts/base.html'%} {% block content %} {{block.super}}
-<div class="container-fluid">
+{%extends 'all-posts/base.html'%}{% load static %} {% block styles %} {{block.super}} {% endblock %} {% block content %} {{block.super}}
 
-  {% for tag_item in tags %}
-
-  <a href="{% url 'tag' tag_item.id %}" class="btn btn-default"> {{ tag_item.name }} </a> {% endfor %}
+<div class="row" id="">
+  {% for tag in all_tags %}
+  <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1" id="tag">
+    <h4 class="text-center" id="tagname">{{tag.name}}</h4>
+    <a href="{% url 'tag' tag.id %}"><img src="{{tag.image.url}}" alt="{{tag.name}}" class="" id="cover"></a>
+  </div>
+  {% endfor %}
 </div>
 <div class="container">
 
@@ -14,7 +17,7 @@
   {% for posts_item in posts %}
 
   <div class="col-xs-6 col-md-4 col-lg-4">
-    <img src="{{posts_item.post_image.url}}" class="img-responsive" alt="Image" height="500px" width="500px" margin="100px">
+    <img src="{{posts_item.post_image.url}}" class="img-responsive" alt="Image" id="space">
     <div class="centered">
       <a href="{% url 'post' posts_item.id %}">{{posts_item.title}}</a>
     </div>

@@ -11,9 +11,9 @@ body   {
   height: 80%;
   padding: 60px;
   color: black;
-  background-color: 	#F0FFFF;
-    border-right: 1px solid #E9967A;
-    border-left: 1px solid #E9967A;
+  background-color: #fff;
+  border-right: 1px solid #E9967A;
+  border-left: 1px solid #E9967A;
   font-family: sans-serif;
   font-size: 20px;
   line-height: 20px;
@@ -34,10 +34,10 @@ image {
 
 }
 
-#cat {
+#space {
   margin: 10px;
-  height: 500px;
-  width: 500px;
+  height: 350px;
+  width: 350px;
   object-fit: cover;
 
 }

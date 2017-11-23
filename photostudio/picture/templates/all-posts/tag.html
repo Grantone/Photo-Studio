@@ -1,0 +1,6 @@
+{% extends 'all-app/base.html' %} {% load static %} {% block styles %} {{block.super}} {% endblock %} {% block content %} {{block.super}} {% if post_item %} {% for post_item in posts %}
+<div class="col-sm-6 col-md-4 col-lg-4" id="">
+  <a href="{% url 'photo' photo.id %}"><img src="{{post_item.image.url}}" class="img-responsive" alt="{{photo.title}}" id="space"><button class="btn" id=""><i class="glyphicon glyphicon-arrow-down"></i></button></a>
+</div>
+{% endfor %} {% else %}
+<h2 class="text-center">No images found for {{tag.name}}</h2> {% endif %} {% endblock %}

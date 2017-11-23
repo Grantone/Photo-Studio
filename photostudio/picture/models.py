@@ -1,5 +1,4 @@
 from __future__ import unicode_literals
-
 from django.db import models
 
 # Create your models here.
@@ -7,9 +6,26 @@ from django.db import models
 
 class tags(models.Model):
     name = models.CharField(max_length=30)
+    pic = models.ImageField(upload_to='posts/')
 
     def __str__(self):
         return self.name
+
+    def save_tag(self):
+        self.save()
+
+    def delete_tag(self):
+        self.delete()
+
+    @classmethod
+    def display_tags(cls):
+        all_tags = tags.objects.all()
+        return all_tags
+
+    @classmethod
+    def search_for_tag(cls, search_term):
+        tags = cls.objects.filter(name__icontains=search_term)
+        return tags
 
 
 class User(models.Model):
