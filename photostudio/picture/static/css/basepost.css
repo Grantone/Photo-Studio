@@ -10,7 +10,7 @@ h1 {
 body   {
   height: 80%;
   padding: 60px;
-  color: #e9e6d3;
+  color: black;
   background-color: 	#F0FFFF;
     border-right: 1px solid #E9967A;
     border-left: 1px solid #E9967A;
@@ -21,8 +21,7 @@ body   {
 }
 
 image {
-  height: 60%;
-  padding: 60px;
+  height: 500px;
 
 }
 
@@ -30,6 +29,15 @@ image {
   background-image: url('../media/posts/images.jpg');
 }
 
-row {
-  
+#pic {
+  color: black;
+
+}
+
+#cat {
+  margin: 10px;
+  height: 500px;
+  width: 500px;
+  object-fit: cover;
+
 }

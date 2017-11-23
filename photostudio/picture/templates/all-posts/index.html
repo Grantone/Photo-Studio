@@ -14,7 +14,7 @@
   {% for posts_item in posts %}
 
   <div class="col-xs-6 col-md-4 col-lg-4">
-    <img src="{{posts_item.post_image.url}}" class="img-responsive" alt="Image">
+    <img src="{{posts_item.post_image.url}}" class="img-responsive" alt="Image" height="500px" width="500px" margin="100px">
     <div class="centered">
       <a href="{% url 'post' posts_item.id %}">{{posts_item.title}}</a>
     </div>
