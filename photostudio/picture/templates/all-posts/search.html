@@ -27,40 +27,5 @@
     <h2> Found 0 posts for the search term {{message}}</h2> {% endif %}
 
   </div>
-
-  <!-- <div class="container-fluid">
-    <div class="row">
-      <ul>
-        {% for tag in tags%}
-        <div class="col-md-1">
-          <a href="{% url 'tag' tag.id%}"><img src="{{tag.image.url}}" alt="{{tag.name}}" height="40px" width="100%"></a> {{tag.name}}
-        </div>
-        {% endfor %}
-      </ul>
-    </div>
-  </div> -->
-
-
-  <!-- <div class="row">
-
-    {% if posts %} {% for post in posts %}
-    <div class="col-sm-6 col-md-3">
-      <a href="{% url 'post' post.id%}"><h1>{{post.title}}</h1></a>
-    </div>
-    {% endfor %} {% endif %}
-  </div>
-</div> -->
   {% endblock %}
-
-  <!-- <div class="container-fluid">
-    <div class="row">
-      <ul>
-        {% for tag in tags%}
-        <div class="col-md-1">
-          <a href="{% url 'tag' tag.id%}"><img src="{{tag.image.url}}" alt="{{tag.name}}" height="40px" width="100%"></a> {{tag.name}}
-        </div>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-  {% endblock %} -->
+</div>
