@@ -1,29 +1,50 @@
 {%extends 'all-posts/base.html'%}{% load static %} {% block styles %} {{block.super}} {% endblock %} {% block content %} {{block.super}}
 
-<div class="row" id="">
-  {% for tag in all_tags %}
-  <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1" id="tag">
-    <h4 class="text-center" id="tagname">{{tag.name}}</h4>
-    <a href="{% url 'tag' tag.id %}"><img src="{{tag.image.url}}" alt="{{tag.name}}" class="" id="cover"></a>
+<div class="container-fluid">
+  <div class="row">
+    <ul>
+      {% for tag in tags%}
+      <div class="col-md-1">
+        <a href="{% url 'tags' tag.id%}"><img src="{{tags.image.url}}" alt="{{tags.name}}" height="40px" width="100%"></a> {{tags.name}}
+      </div>
+      {% endfor %}
+    </ul>
   </div>
-  {% endfor %}
-</div>
-<div class="container">
+
+
 
   <div class="row">
-
-    <h2> Posted Photos </h2>
+    <h1>Unsplash</h1>
+    <h4>Beautiful, free photos.</h4>
+    <p>Gifted by the world’s most generous community of photographers. 🎁</p>
   </div>
-  {% for posts_item in posts %}
 
-  <div class="col-xs-6 col-md-4 col-lg-4">
-    <img src="{{posts_item.post_image.url}}" class="img-responsive" alt="Image" id="space">
-    <div class="centered">
-      <a href="{% url 'post' posts_item.id %}">{{posts_item.title}}</a>
+
+
+  <div class="row" id="">
+    {% for tag in all_tags %}
+    <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1" id="tag">
+      <h4 class="text-center" id="tagname">{{tag.name}}</h4>
+      <a href="{% url 'tag' tag.id %}"><img src="{{tag.image.url}}" alt="{{tag.name}}" class="" id="cover"></a>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
+  <div class="container">
 
-</div>
+    <div class="row" id="inga">
 
-{% endblock %}
+      <h2> Posted Photos </h2>
+    </div>
+    {% for posts_item in posts %}
+
+    <div class="col-xs-6 col-md-4 col-lg-4">
+      <img src="{{posts_item.post_image.url}}" class="img-responsive" alt="Image" id="space">
+      <div class="centered">
+        <a href="{% url 'post' posts_item.id %}">{{posts_item.title}}</a>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+  {% endblock %}

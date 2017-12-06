@@ -51,7 +51,7 @@ def search_results(request):
         search_term = request.GET.get("post")
         searched_posts = Post.search_by_title(search_term)
 
-        return render(request, 'all-posts/search.html', {"message": message, "posts": searched_posts})
+        return render(request, 'all-posts/search.html', {"message": message, "posts": searched_results})
 
     else:
         message = "You haven't searched for any post"
