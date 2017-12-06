@@ -11,14 +11,24 @@ Granton Mchana.
 ## Description
 This is a website that allows a user to post and add or even view posted photos on this page. A photo may be reviewed by many persons but one user is the one allocated a chance to post the images or photos.
 
-## Setup/Installation Requirements
-To access the web app, navigate to
-*
+## Setup Requirements
+
+* psycopg2==2.7.3.2
+* Django==1.11.7
+* django-bootstrap3==9.1.0
+* olefile==0.44
+* Pillow==4.3.0
+* pytz==2017.3
+
 
 ## Technologies Used
 
 * Python
 * Django
+* Postgres Database
+* Bootstrap
+* CSS
+* HTML
 
 ## Support and contact details
 In case of any inquiry you can reach us through my email gmchana254@gmail.com
@@ -45,4 +55,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THIS APP OR THE USE OR OTHER DEALINGS IN
 THIS APP.
 
-Copyright (c) {2017} **{MORINGA SCHOOL}**
+MIT License (c) {2017} **{MORINGA SCHOOL}**
