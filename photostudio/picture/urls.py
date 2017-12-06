@@ -2,6 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import url
 from . import views
+from .views import tags
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
@@ -10,7 +11,7 @@ urlpatterns = [
     url(r'^search/', views.search_results, name='search_results'),
     url(r'^post/(\d+)', views.post, name='post'),
     url(r'^photos/$', views.photos, name='photos'),
-    url(r'^tags/$', views.tags, name='tags'),
+    url(r'^tags/$', views.tag, name='tags'),
 
 
 ]

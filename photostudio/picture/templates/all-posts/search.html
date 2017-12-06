@@ -1,4 +1,22 @@
-{%extends 'all-posts/base.html'%} {% block content %} {% block scripts %}
+{%extends 'all-posts/base.html'%} {% load staticfiles %} {% block content %} {% block scripts %}
+
+
+<div class="row">
+  <h1>Warning</h1>
+  <h3>Please be aware of what you are searching for :)</h3>
+</div>
+
+<div class="row" id="s">
+  {% for tag in tags %}
+  <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1" id="tag">
+    <h4 class="text-center" id="tagname">{{tag.name}}</h4>
+    <a href="{% url 'tag' tag.id %}"><img src="{{tag.image.url}}" alt="{{tag.name}}" class="" id="cover"></a>
+  </div>
+  {% endfor %}
+</div>
+
+
+
 <link rel="stylesheet" href="{% static 'css/basepost.css' %}"> {% endblock %} {% block body %} {{block.super}}
 
 <div class="container">
@@ -10,7 +28,7 @@
 
   </div>
 
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
     <div class="row">
       <ul>
         {% for tag in tags%}
@@ -20,7 +38,7 @@
         {% endfor %}
       </ul>
     </div>
-  </div>
+  </div> -->
 
 
   <!-- <div class="row">
@@ -34,7 +52,7 @@
 </div> -->
   {% endblock %}
 
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
     <div class="row">
       <ul>
         {% for tag in tags%}
@@ -45,3 +63,4 @@
       </ul>
     </div>
   </div>
+  {% endblock %} -->

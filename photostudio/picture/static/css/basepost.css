@@ -43,5 +43,9 @@ image {
 }
 
 #tag {
-  text-align: center;
+  border-radius: 5px;
+  height: 50px;
+  width: 115px;
+  margin-right: 10px;
+  background-color: grey;
 }

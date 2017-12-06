@@ -35,24 +35,32 @@ def photos(request, photo_id):
 
 
 def tag(request, tag_id):
-    all_tags = tags.display_tags()
+    # all_tags = tags.display_tags()
     try:
         tag = tags.objects.get(id=tag_id)
-        photos = Photo.objects.filter(tags=tag).all()
+        photos = Photo.objects.filter(tag=tag).all()
 
     except DoesNotExist:
         raise Http404()
 
-    return render(request, 'all-posts/tag.html', {"tag": tag, "photos": photos, "all_tags": all_tags})
+    return render(request, 'all-posts/tag.html', {"tag": tag, "photos": photos})
 
 
 def search_results(request):
-    if 'post' in request.GET and request.GET["post"]:
-        search_term = request.GET.get("post")
-        searched_posts = Post.search_by_title(search_term)
+        # get all tags
+    all_tags = tags.display_tags()
 
-        return render(request, 'all-posts/search.html', {"message": message, "posts": searched_results})
+    # check if photo query exists in our request.GET object
+    if 'tag' in request.GET and request.GET['tag']:
+        search_term = request.GET.get('tag')  # get search term
+        search_tag = Photo.search_by_tags(
+            search_term)
+        photo = Photo.objects.filter(tag=search_tag).all()
+        message = f"{search_term}"
+
+        return render(request, 'all-posts/search.html', {"message": message, "search_tag": search_tag, "photo": photo})
 
     else:
-        message = "You haven't searched for any post"
-        return render(request, 'all-news/search.html', {"message": message})
+        message = "You haven't searched for any term"
+
+        return render(request, 'all-posts/search.html', {"message": message})
