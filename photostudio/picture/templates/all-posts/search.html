@@ -18,15 +18,13 @@
     <h2> Found 0 posts for the search term {{message}}</h2> {% endif %}
 
   </div>
-  {% endblock %}
-
-
+  {% endblock %} l
 
   <div class="row" id="s">
     {% for tag in tags %}
     <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1" id="tag">
       <h4 class="text-center" id="tagname">{{tag.name}}</h4>
-      <a href="{% url 'tag' tag.id %}"><img src="{{tag.image.url}}" alt="{{tag.name}}" class="" id="cover"></a>
+      <a href="{% url 'tag' tag.id %}"><img src="{{tag.post_image.url}}" alt="{{tag.name}}" class="" id="cover"></a>
     </div>
     {% endfor %}
   </div>

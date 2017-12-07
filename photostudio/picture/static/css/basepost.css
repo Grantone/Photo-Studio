@@ -2,26 +2,62 @@ h1 {
   color: red;
 }
 
-.navbar {
-   background-color: #FFEBCD !important;
+#love {
+  background-color: #fff;
+  border: #fff;
+}
+#nav {
+  padding-right: 4px;
+  padding-left: 708px;
+  margin-bottom: 33px;
+  margin-top: -94px;
+  /*text-align: center;*/
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: #000;
 }
 
+.navbar-inverse .navbar-nav>li>a:hover {
+  color: #000;
+}
+#icon {
+  font-size: 25px;
+  color: #000;
+}
+
+#nav:hover {
+  color: #000;
+  cursor: pointer;
+}
+#searchbar {
+  width: 506px;
+  height: 40px;
+  padding: 0 30px 2px 42px;
+  font-size: 14px;
+  color: #111;
+  background-color: #f1f1f1;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  outline: none;
+  transition: all .2s ease-in-out;
+  -webkit-appearance: none;
+}
 
 body   {
-  height: 80%;
-  padding: 60px;
+  /*height: 10%;*/
+  padding: 2px;
   color: black;
   background-color: #fff;
   border-right: 1px solid #E9967A;
   border-left: 1px solid #E9967A;
   font-family: sans-serif;
   font-size: 20px;
-  line-height: 20px;
+  line-height: 5px;
   font-weight: normal;
 }
 
 image {
-  height: 500px;
+  height: 100px;
 
 }
 

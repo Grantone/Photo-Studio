@@ -5,31 +5,34 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/basepost.css">
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="container-fluid" id="love">
+  <div class="navbar navbar-inverse" role="navigation" id="love">
+    <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="{% url 'index' %}">Photo Studio</a>
+        <a class="navbar-brand" href="{% url 'index' %}"><i class="glyphicon glyphicon-camera" id="icon"></i></a>
       </div>
-      <!-- adding a search form -->
-      <div class="col-sm-4 col-md-4 navbar-right">
-        <form class="navbar-form" action="{% url 'search_results' %}" role="search">
+      <div class="col-sm-4 col-md-4 navbar">
+        <form action="{% url 'search_results' %}" class="navbar-form">
           <div class="input-group">
-            <input type="text" name="post" placeholder="Search" class="form-control">
-            <div class="input-group-btn">
-              <button type="submit" class="btn btn-default">
-                  <i class="glyphicon glyphicon-search"></i>
-                </button>
-            </div>
+            <input type="text" autocorrect="off" id="searchbar" name="tag" data-test="search-input-input" placeholder="Search for free photos" tabindex="1" value="">
           </div>
-
         </form>
-
+      </div>
+      <div class="nav navbar-brand navbar-collapse collapse-right" id="nav">
+        <ul class="nav navbar-brand" style="color: black;">
+          <a href="/">Home</a>
+          <a href="/">Collections</a>
+          <a href="/">Explore</a>
+          <a href="/">About</a>
+          <a href="/">Login</a>
+          <button type="button" class="btn btn-success">Join free</button>
+        </ul>
       </div>
     </div>
-  </nav>
+  </div>
 </body>
 
 </html>
