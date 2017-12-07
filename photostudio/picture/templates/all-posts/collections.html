@@ -1,0 +1,23 @@
+{% extends 'all-posts/base.html' %} {% load bootstrap3 %} {% load static %} {% block scripts %}
+
+<div class="row">
+  <h3>Collections</h3>
+  <p>We have a variety of images you may like at the moment. Let you see for yourself.</p>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/basepost.css' %}"> {{block.super}} {%endblock%} {%block content%}
+<header class="text-center text-white d-flex" class="container">
+  <div class="photo_post">
+    <div class="">
+      {{post.title}}
+    </div>
+    <div class="container" id="inga">
+      <a href="#" data-toggle="modal" data-target="">
+            <img src="{{post.post_image.url}}" class="img-responsive" alt="{{post.title}}"></a>
+    </div>
+    {%for tag in post.tags.all%}
+    <p id="pic">{{tag.name}} </p>
+    {%endfor%}
+  </div>
+</header>
+{% endblock %}

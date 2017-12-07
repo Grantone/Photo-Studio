@@ -46,6 +46,17 @@ def tag(request, tag_id):
     return render(request, 'all-posts/tag.html', {"tag": tag, "photos": photos})
 
 
+def collections(request):
+
+    try:
+        photo = Post.objects.get(id=photo_id)
+
+    except Post.DoesNotExist:
+        raise Http404()
+
+    return render(request, 'all-posts/collections.html', {"tag": tag, "photos": photos})
+
+
 def search_results(request):
         # get all tags
     # all_tags = tags.display_tags()

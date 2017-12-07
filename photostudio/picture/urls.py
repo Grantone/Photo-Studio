@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^post/(\d+)', views.post, name='post'),
     url(r'^photos/$', views.photos, name='photos'),
     url(r'^tags/$', views.tag, name='tags'),
+    url(r'^collections/(\d+)', views.collections, name='collections'),
 
 
 ]
