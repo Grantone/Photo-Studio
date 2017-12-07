@@ -3,7 +3,7 @@
 [Photo Studio](https://github.com/Grantone/Photo-Studio)
 
 
-This is a web app for ading,viewing and posting images.
+This is a web application for adding,viewing and posting images.
 #### By
 
 Granton Mchana.
@@ -25,7 +25,7 @@ This is a website that allows a user to post and add or even view posted photos 
 
 * Python
 * Django
-* Postgres Database
+* Postgresql Database
 * Bootstrap
 * CSS
 * HTML
